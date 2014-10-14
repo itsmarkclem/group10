@@ -24,7 +24,11 @@ def list_of_items(items):
     'money, a student handbook, laptop'
 
     """
-    pass
+    result = ""
+    for key in items:
+        result += key["name"] + (", " if not key == items[len(items) - 1] else "")
+    return result
+
 
 
 def print_room_items(room):
@@ -49,7 +53,10 @@ def print_room_items(room):
     Note: <BLANKLINE> here means that doctest should expect a blank line.
 
     """
-    pass
+    items = room["items"]
+    x = list_of_items(items)
+    if items != []:
+        print("There is " + x + " here." + "\n")
 
 
 def print_inventory_items(items):
@@ -62,7 +69,9 @@ def print_inventory_items(items):
     <BLANKLINE>
 
     """
-    pass
+    x = list_of_items(items)
+    if items != []:
+        print("You have " + x + "." + "\n")
 
 
 def print_room(room):
@@ -118,7 +127,8 @@ def print_room(room):
     # Display room description
     print(room["description"])
     print()
-
+    # Display items in room
+    print_room_items(room)
     #
     # COMPLETE ME!
     #
