@@ -239,8 +239,13 @@ def execute_go(direction):
     moving). Otherwise, it prints "You cannot go there."
     """
     if is_valid_exit(current_room["exits"],direction) == True:
+<<<<<<< HEAD
         current_room=move(current_room["exits"],direction)
         global current_room
+=======
+        global current_room
+        current_room = move(current_room["exits"],direction)
+>>>>>>> 6ec32435a841c4074ecfaf7390f3cc141a02e586
     else:
         print("You cannot go there.")
 
@@ -251,6 +256,7 @@ def execute_take(item_id):
     there is no such item in the room, this function prints
     "You cannot take that."
     """
+<<<<<<< HEAD
     current_mass = calculate_mass(inventory)
     found = False
     for item in current_room["items"]:
@@ -262,6 +268,14 @@ def execute_take(item_id):
                 break
     if found== True:
         print("You took "+str(itemtoadd["id"])+".")
+=======
+    found = False
+    for item in current_room["items"]:
+        if item["id"] == item_id:
+            found = True
+            itemtoadd = item
+    if found == True:
+>>>>>>> 6ec32435a841c4074ecfaf7390f3cc141a02e586
         inventory.append(itemtoadd)
         current_room["items"].remove(itemtoadd)
     else:
@@ -274,6 +288,7 @@ def execute_drop(item_id):
     player's inventory to list of items in the current room. However, if there is
     no such item in the inventory, this function prints "You cannot drop that."
     """
+<<<<<<< HEAD
     #for item in inventory:
     #    if item[]
     found=False
@@ -286,6 +301,16 @@ def execute_drop(item_id):
         print("You dropped "+str(itemtodrop["id"])+".")
         current_room["items"].append(itemtodrop)
         inventory.remove(itemtodrop)
+=======
+    found = False
+    for item in inventory:
+        if item["id"] == item_id:
+            found = True
+            itemtoadd = item
+    if found == True:
+        inventory.remove(itemtoadd)
+        current_room["items"].append(itemtoadd)
+>>>>>>> 6ec32435a841c4074ecfaf7390f3cc141a02e586
     else:
         print("You cannot drop that")
     
