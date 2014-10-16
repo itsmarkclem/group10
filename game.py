@@ -270,7 +270,15 @@ def execute_drop(item_id):
     #for item in inventory:
     #    if item[]
 
-    pass
+    for item in inventory:
+        if item["id"]== item_id:
+            found= True
+            itemtodrop = item
+    if found== True:
+        current_room["items"].append(itemtodrop)
+        inventory.remove(itemtodrop)
+    else:
+        print("You cannot drop that")
     
 
 def execute_command(command):
