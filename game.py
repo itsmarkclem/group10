@@ -269,7 +269,6 @@ def execute_drop(item_id):
     player's inventory to list of items in the current room. However, if there is
     no such item in the inventory, this function prints "You cannot drop that."
     """
-<<<<<<< HEAD
     found = False
     for item in inventory:
         if item["id"] == item_id:
@@ -278,18 +277,6 @@ def execute_drop(item_id):
     if found == True:
         inventory.remove(itemtoadd)
         current_room["items"].append(itemtoadd)
-=======
-    #for item in inventory:
-    #    if item[]
-
-    for item in inventory:
-        if item["id"]== item_id:
-            found= True
-            itemtodrop = item
-    if found== True:
-        current_room["items"].append(itemtodrop)
-        inventory.remove(itemtodrop)
->>>>>>> c3eb7d0e79c50661a53896ad3acffec47a6aa749
     else:
         print("You cannot drop that")
     
