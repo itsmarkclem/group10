@@ -66,6 +66,17 @@ def display_room(room):
     "description" etc. (see map.py for the definition). The name of the room
     is printed in all capitals and framed by blank lines. Then follows the
     description of the room and a blank line again. For example:
+    >>> display_room(rooms["Office"])
+    <BLANKLINE>
+    THE GENERAL OFFICE
+    <BLANKLINE>
+    You are standing next to the cashier's till at
+    30-36 Newport Road. The cashier looks at you with hope
+    in their eyes. If you go west you can return to the
+    Queen's Buildings.
+    <BLANKLINE>
+
+    Note: <BLANKLINE> here means that doctest should expect a blank line.
     """
     rOOM = (room['name'])
     print(str(rOOM.upper() + "\n"))
