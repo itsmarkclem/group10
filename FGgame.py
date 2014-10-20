@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
-from map import rooms
-from player import *
-from items import *
-from gameparser import *
+from FGmap import rooms
+from FGplayer import *
+from fgitems import *
+from FGgameparser import *
 
 
 

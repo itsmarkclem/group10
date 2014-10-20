@@ -1,5 +1,5 @@
-from items import *
-from map import rooms
+from fgitems import *
+from fgmap import rooms
 
 inventory = []
 

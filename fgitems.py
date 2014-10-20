@@ -8,7 +8,7 @@ item_gun = {
     "mass": 2.00
 }
 
-item_Badge = {
+item_badge = {
     "id": "Badge",
 
     "name": "Badge",

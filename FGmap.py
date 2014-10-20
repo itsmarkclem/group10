@@ -1,4 +1,4 @@
-from items import *
+from fgitems import *
 
 your_flat = {
     "name": "Your flat",
@@ -37,7 +37,7 @@ pack of biscuits. The reception is to the west.""",
 
     "exits": {"north": "Main Street"},
 
-    "items": [item_jumper, item_victimHandbag, item_watch, item_beer]
+    "items": [item_jumper, item_handbag, item_watch, item_beer]
 }
 
 police_station = {
