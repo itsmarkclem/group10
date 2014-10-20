@@ -9,7 +9,7 @@ with peculiar looking beer bottles strewn across the place.
 It smells like it hasn't been cleaned in months; 
 it looks like it hasn't been cleaned in years. But it's home, nonetheless.""",
 
-    "exits": {"south": "Main Street"},
+    "exits": {"west": "Housing Estate"},
 
     "items": [item_gun, item_handcuffs, item_badge]
 }
@@ -21,7 +21,7 @@ the_hub = {
     """You are in the centre of town, the whole world is at your fingertips. 
 And by whole world, I mean a few select locations within New York.""",
 
-    "exits":  {"north": "Suspect's House", "south": "Crime Scene", "east": "Police Station", "west": "Pub", "southeast": "Partner's House", "northwest": "Suspect Two's House", "northeast": "Your flat"},
+    "exits":  {"north": "Housing Estate", "south": "Crime Scene", "east": "Police Station", "west": "Bar"},
 
     "items": []
 }
@@ -30,10 +30,10 @@ crime_scene = {
     "name": "Crime Scene",
 
     "description":
-    """You are in your personal tutor's office. He intently
-stares at his huge monitor, ignoring you completely.
-On the desk you notice a cup of coffee and an empty
-pack of biscuits. The reception is to the west.""",
+    """You are confronted with a brutal sight: the body absorbs all of the
+happiness that may have existed here. The smell is already pungent- however,
+the most perplexing aspect is the body's attire... They appear to be wearing a
+men's jumper.""",
 
     "exits": {"north": "Main Street"},
 
@@ -86,7 +86,7 @@ suspect_house = {
 You can hear music pumping from the neighbour's house. 
 You may knock on the door; there is, however, a first floor window open...""",
 
-    "exits": {"south": "Main Street",},
+    "exits": {"south": "Housing Estate"},
 
     "items": []
 }
@@ -116,6 +116,29 @@ His arrogant facade might be hiding something.""",
     "items": []
 }
 
+partners_house = {
+    "name": "Partner's House",
+
+    "description":
+    """This house is nice. Really nice. Beats your shoddy excuse for flat; 
+not that that says much. Maybe you'll live somewhere like here one day.""",
+
+    "exits": {"east": "Housing Estate"},
+
+    "items": []
+}
+
+housing_estate = {
+    "name": "Housing Estate",
+
+    "description":
+    """Your luxurious motor vehicle looks somewhat out of place 
+against this backdrop of alcoholics, thugs, and prostitutes.""",
+
+    "exits": {"south": "Main Street", "east": "Your Flat", "north": "Suspect's House", "west": "Partner's House"},
+
+    "items": []
+}
 
 rooms = {
     "Main Street": the_hub,
@@ -126,5 +149,7 @@ rooms = {
     "Interrogation Room": interrogation_room,
     "Suspect's House": suspect_house,
     "CCTV Room": CCTV_room,
-    "Bar": room_bar
+    "Bar": room_bar,
+    "Partner's house": partners_house,
+    "Housing Estate": housing_estate
 }
