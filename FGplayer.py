@@ -1,7 +1,7 @@
 from fgitems import *
-from fgmap import rooms
+from FGmap import rooms
 
-inventory = []
+inventory = [item_jumper]
 
 # Start game at the reception
 current_room = rooms["Your Flat"]

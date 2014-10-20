@@ -9,7 +9,7 @@ with peculiar looking beer bottles strewn across the place.
 It smells like it hasn't been cleaned in months; 
 it looks like it hasn't been cleaned in years. But it's home, nonetheless.""",
 
-    "exits": {"out": "Main Street"},
+    "exits": {"south": "Main Street"},
 
     "items": [item_gun, item_handcuffs, item_badge]
 }
