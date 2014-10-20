@@ -47,7 +47,7 @@ police_station = {
     """You are awkwardly standing at the desk of your coworker, Claire. 
 She might help you get people in for questioning if you're lucky.""",
 
-    "exits": {"west": "Main Street", "south": "Interrogation room", "north": "Lab"},
+    "exits": {"west": "Main Street", "south": "Interrogation Room", "north": "Lab"},
 
     "items": [item_carInformation, item_warrant]
 }
@@ -150,6 +150,6 @@ rooms = {
     "Suspect's House": suspect_house,
     "CCTV Room": CCTV_room,
     "Bar": room_bar,
-    "Partner's house": partners_house,
+    "Partner's House": partners_house,
     "Housing Estate": housing_estate
 }

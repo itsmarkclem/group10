@@ -1,5 +1,5 @@
 item_gun = {
-    "id": "Gun",
+    "id": "gun",
 
     "name": "Gun",
 
@@ -9,7 +9,7 @@ item_gun = {
 }
 
 item_badge = {
-    "id": "Badge",
+    "id": "badge",
 
     "name": "Badge",
 
@@ -19,7 +19,7 @@ item_badge = {
 }
 
 item_handcuffs = {
-    "id": "Handcuffs",
+    "id": "handcuffs",
 
     "name": "Handcuffs",
 
@@ -40,7 +40,7 @@ item_jumper = {
 item_handbag = {
     "id": "handbag",
     
-    "name": "Handbag.",
+    "name": "Handbag",
 
     "description": """Victims handbag taken from the crime scene.""",
     "mass": 0.75
@@ -49,7 +49,7 @@ item_handbag = {
 item_watch = {
     "id": "watch",
     
-    "name": " Luxury watch",
+    "name": "Luxury watch",
 
     "description": """ This watch could sell for a lot on the streets.""",
     "mass": 1
@@ -57,12 +57,12 @@ item_watch = {
 
 item_beer = {
     "id": "beer",
-    "name": " Beer Bottle",
+    "name": "Beer Bottle",
     "description": """ Signature bottle from the local bar.""",
     "mass": 1
 }
 item_DNA = {
-    "id": " DNA",
+    "id": "DNA",
     "name": "DNA",
     "description": """DNA results from the jumper found at the crime scene.""",
     "mass": 0.5
@@ -70,21 +70,21 @@ item_DNA = {
 }
 
 item_carInformation = {
-    "id": "carInformation",
-    "name": " Car Information",
+    "id": "car information",
+    "name": "Car Information",
     "description": """Car information of suspect obtained from the bar cctv footage.""",
     "mass": 0.5
 
 }
 item_cctvTapes = {
-    "id": "cctvTapes",
-    "name": " CCTV Tapes",
+    "id": "CCTV tapes",
+    "name": "CCTV Tapes",
     "description": """ CCTV footage from the bar on the night of the crime.""",
     "mass": 0.5
 }
 item_warrant = {
     "id": "warrant",
-    "name": "warrant",
+    "name": "Warrant",
     "description": """Warrant to bring a suspect in for questioning.""",
     "mass": 0.5
 }
