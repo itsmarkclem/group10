@@ -365,7 +365,8 @@ def menu(exits, room_items, inv_items):
 
     # Read player's input
     user_input = input("> ")
-
+    if user_input == "":
+        user_input= "nothing"
     # Normalise the input
     normalised_user_input = normalise_input(user_input)
 
