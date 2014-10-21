@@ -89,7 +89,7 @@ CCTV_room = {
 Luckily, their equipment has still been running and they haven't ran out of tape yet.
 Maybe you can find something on the tape of last night.""",
 
-    "exits": {"east": "Pub"},
+    "exits": {"east": "Bar"},
 
     "items": [item_carInformation],
     "requireditems":[item_alibi]
@@ -120,7 +120,7 @@ His cold, apathetic look almost unnerves you, but he seems happy to help.""",
     "exits": {"south": "Police Station"},
 
     "items": [item_DNA],
-    "requireditems":[item_badge]
+    "requireditems":[item_jumper]
 }
 
 interrogation_room = {

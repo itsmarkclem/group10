@@ -231,7 +231,7 @@ def is_valid_exit(exits, chosen_exit):
     """
     return chosen_exit in exits
 
-<<<<<<< HEAD
+
 def have_req_item(room, items):
     valid= False
 
@@ -239,8 +239,6 @@ def have_req_item(room, items):
         if rooms[room]["requireditems"][0] == key:
             valid= True
     return valid
-=======
->>>>>>> 458c8661aeb061399528b1ece49f469769026139
 
 def execute_go(direction):
     """This function, given the direction (e.g. "south") updates the current room
@@ -248,7 +246,7 @@ def execute_go(direction):
     (and prints the name of the room into which the player is
     moving). Otherwise, it prints "You cannot go there."
     """
-<<<<<<< HEAD
+
     
     if is_valid_exit(current_room["exits"],direction) == True and (have_req_item(current_room["exits"][direction], inventory) == True):
        #a = current_room["exits"],direction
@@ -256,11 +254,8 @@ def execute_go(direction):
         #a = (current_room["exits"][direction])
         #b = a.get("requireditems")
         #if b in inventory:
+    
         global current_room
-=======
-    global current_room
-    if is_valid_exit(current_room["exits"],direction) == True:
->>>>>>> 458c8661aeb061399528b1ece49f469769026139
         current_room=move(current_room["exits"],direction)
     else:
         print("You cannot go there.")
