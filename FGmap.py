@@ -77,7 +77,7 @@ as it happens to smell approximately like a toilet
 
 
     "items": [],
-    "requireditems":[item_badge]
+    "requireditems":[item_beer]
 
 }
 
@@ -91,7 +91,7 @@ Maybe you can find something on the tape of last night.""",
 
     "exits": {"east": "Bar"},
 
-    "items": [item_carInformation],
+    "items": [item_car],
     "requireditems":[item_alibi]
 
 }
@@ -106,7 +106,7 @@ You may knock on the door; there is, however, a first floor window open...""",
     "exits": {"south": "Housing Estate"},
 
     "items": [item_proof],
-    "requireditems":[item_carInformation]
+    "requireditems":[item_car]
 
 }
 
@@ -133,7 +133,7 @@ His arrogant facade might be hiding something.""",
 
     "exits": {"north": "Police Station"},
 
-    "items": [item_alibi],
+    "items": [],
     "requireditems":[item_warrant]
 }
 

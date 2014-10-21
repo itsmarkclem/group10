@@ -69,10 +69,10 @@ item_blood = {
 
 }
 
-item_carInformation = {
-    "id": "car information",
-    "name": "Car Information",
-    "description": """Car information of suspect obtained from the bar cctv footage.""",
+item_car = {
+    "id": "information",
+    "name": "information",
+    "description": """This is information about a car licece plate.""",
     "mass": 0.5
 
 }
