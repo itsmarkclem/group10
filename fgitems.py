@@ -77,12 +77,20 @@ item_blood = {
 
 }
 
+<<<<<<< HEAD
 item_carInformation = {
     "id": "car information",
     "name": "car information",
     "description": """Car information of suspect obtained from the bar cctv footage.""",
     "mass": 0
     "karma": 0
+=======
+item_car = {
+    "id": "information",
+    "name": "information",
+    "description": """This is information about a car licece plate.""",
+    "mass": 0.5
+>>>>>>> 7b4fb3bc6341ff27217479f5ef6957938cf74d33
 
 }
 item_alibi = {
