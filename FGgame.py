@@ -232,31 +232,40 @@ def is_valid_exit(exits, chosen_exit):
     return chosen_exit in exits
 
 def interrogation_place():
+    isvalid = False
+    while isvalid == False:
+        print("1. Where were you last night?")
+        print("2. Why did you kill Sarah last night?")
+        print("3. There is no need for words. Punch him in the face.")
+        print("4. Don't ask him anything.")
 
-    print("1. Where were you last night?")
-    print("2. Why did you kill Sarah last night?")
-    print("3. There is no need for words. Punch him in the face.")
-    print("4. Don't ask him anything.")
-    choice= int(input("What do you choose? Type the number"))               
+        choice= str(input("What do you choose? Type the number"+"\n"))
+        if choice =="1" or choice =="2" or choice =="3" or choice =="4":
+            isvalid = True
+        else:
+            print("\n"+"That is not a valid input."+"\n")
 
-    if choice == 1:
+    if choice == "1":
         print("I was at the bar with Sarah. Why?")
-        print("Conveniently, Claire is the suspect's girlfriend and clears him for last night.")   
-    elif choice == 2:
-        print("Fuck off, Sarah's dead? I honestly didn't know. I wasn't there.")
-        print("Conveniently, Claire is the suspect's girlfriend and clears him for last night.")   
-    elif choice == 3:
-        print("You get dragged out of the room and your partner yells at you.")
-        print("Conveniently, Claire is the suspect's girlfriend and clears him for last night.")   
-    elif choice == 4:
         print("Conveniently, Claire is the suspect's girlfriend and clears him for last night.")
-    else:
-        print("That is not a valid input. However, Claire is the suspect's girlfriend and clears him for last night.")        
+        item_alibi["karma"] = 5   
+    elif choice == "2":
+        print("Fuck off, Sarah's dead? I honestly didn't know. I wasn't there.")
+        print("Conveniently, Claire is the suspect's girlfriend and clears him for last night.")
+        item_alibi["karma"] = -2   
+    elif choice == "3":
+        print("You get dragged out of the room and your partner yells at you.")
+        print("Conveniently, Claire is the suspect's girlfriend and clears him for last night.")
+        item_alibi["karma"] = -5     
+    elif choice == "4":
+        print("Conveniently, Claire is the suspect's girlfriend and clears him for last night.")         
 
     inventory.remove(item_warrant)
     inventory.append(item_alibi)
-    print("\n"+"The suspect has an alibi. Maybe we should head back to the pub."+"\n")
+    calculate_karma(inventory)
+    print("\n"+"The suspect has an alibi. Maybe we should head back to the pub.")
     print(item_alibi["description"])
+    print()
 
 def have_req_item(room, items):
     valid= False
@@ -295,6 +304,7 @@ def execute_take(item_id):
     "You cannot take that."
     """
     current_mass = calculate_mass(inventory)
+    global karma
     found = False
     for item in current_room["items"]:
         if item["id"]== item_id:
@@ -308,8 +318,9 @@ def execute_take(item_id):
         print(itemtoadd["description"])
         inventory.append(itemtoadd)
         current_room["items"].remove(itemtoadd)
+        karma = calculate_karma(inventory)
         
-        Continue = input("Press enter to continue")
+        Continue = input("Press enter to continue"+"\n")
         if Continue != "drtuyiop[oiuytdrtfgyhiop[oihkfcxg":
             print_room(current_room)
             print_inventory_items(inventory)
@@ -321,6 +332,18 @@ def execute_take(item_id):
             print("You cannot take that")
 
     
+def calculate_karma(inventory):
+    global karma
+    karma=0
+    for item in inventory:
+        karma=item["karma"]+ karma
+    return karma
+
+def calculate_outcome(karma):
+    if karma <=0:
+        print()
+    elif karma >0:
+        print()
 
 def execute_drop(item_id):
     """This function takes an item_id as an argument and moves this item from the
