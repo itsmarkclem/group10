@@ -88,3 +88,15 @@ item_warrant = {
     "description": """Warrant to bring a suspect in for questioning.""",
     "mass": 0.5
 }
+item_alibi = {
+    "id": "alibi",
+    "name": "alibi",
+    "description": """Alibi clears the suspect's involvement in the crime.""",
+    "mass": 0
+}
+item_voicemail = {
+    "id": "voicemail",
+    "name": "voicemail",
+    "description": """Voicemail proving theat the suspect has been out of the country.""",
+    "mass": 0
+}

@@ -30,7 +30,6 @@ def list_of_items(items):
     return result
 
 
-
 def print_room_items(room):
     """This function takes a room as an input and nicely displays a list of items
     found in this room (followed by a blank line). If there are no items in
@@ -229,8 +228,18 @@ def is_valid_exit(exits, chosen_exit):
     >>> is_valid_exit(rooms["Parking"]["exits"], "east")
     True
     """
+             
     return chosen_exit in exits
 
+def have_req_item(room, items):
+    valid= False
+
+    for key in items: 
+        if rooms[room]["requireditems"][0] == key:
+
+            valid= True
+
+    return valid
 
 def execute_go(direction):
     """This function, given the direction (e.g. "south") updates the current room
@@ -238,9 +247,16 @@ def execute_go(direction):
     (and prints the name of the room into which the player is
     moving). Otherwise, it prints "You cannot go there."
     """
-    if is_valid_exit(current_room["exits"],direction) == True:
+    
+    if is_valid_exit(current_room["exits"],direction) == True and (have_req_item(current_room["exits"][direction], inventory) == True or rooms[current_room["exits"][direction]]["requireditems"] == []):
+       #a = current_room["exits"],direction
+        #if have_req_item(current_room["exits"][direction], inventory) == True or current_room["exits"][direction] == []:
+        #a = (current_room["exits"][direction])
+        #b = a.get("requireditems")
+        #if b in inventory:
         global current_room
         current_room=move(current_room["exits"],direction)
+
     else:
         print("You cannot go there.")
 
@@ -257,7 +273,7 @@ def execute_take(item_id):
         if item["id"]== item_id:
             found= True
             itemtoadd=item
-            if (current_mass+itemtoadd["mass"])>3:
+            if (current_mass+itemtoadd["mass"])>5:
                 found = False
                 break
     if found== True:

@@ -11,7 +11,8 @@ it looks like it hasn't been cleaned in years. But it's home, nonetheless.""",
 
     "exits": {"west": "Housing Estate"},
 
-    "items": [item_gun, item_handcuffs, item_badge]
+    "items": [item_gun, item_handcuffs, item_badge],
+    "requireditems":[]
 }
 
 the_hub = {
@@ -23,7 +24,8 @@ And by whole world, I mean a few select locations within New York.""",
 
     "exits":  {"north": "Housing Estate", "south": "Crime Scene", "east": "Police Station", "west": "Bar"},
 
-    "items": []
+    "items": [],
+    "requireditems":[item_badge, item_gun, item_handcuffs]
 }
 
 crime_scene = {
@@ -37,7 +39,8 @@ men's jumper.""",
 
     "exits": {"north": "Main Street"},
 
-    "items": [item_jumper, item_handbag, item_watch, item_beer]
+    "items": [item_jumper, item_handbag, item_watch, item_beer],
+    "requireditems":[]
 }
 
 police_station = {
@@ -49,7 +52,8 @@ She might help you get people in for questioning if you're lucky.""",
 
     "exits": {"west": "Main Street", "south": "Interrogation Room", "north": "Lab"},
 
-    "items": [item_carInformation, item_warrant]
+    "items": [item_warrant],
+    "requireditems":[]
 }
 
 room_bar = {
@@ -62,7 +66,8 @@ as it happens to smell approximately like a toilet
 
     "exits": {"east": "Main Street", "west": "CCTV Room"},
 
-    "items": []
+    "items": [],
+    "requireditems":[]
 }
 
 CCTV_room = {
@@ -75,7 +80,8 @@ Maybe you can find something on the tape of last night.""",
 
     "exits": {"east": "Pub"},
 
-    "items": [item_cctvTapes]
+    "items": [item_carInformation],
+    "requireditems":[item_alibi]
 }
 
 suspect_house = {
@@ -88,7 +94,8 @@ You may knock on the door; there is, however, a first floor window open...""",
 
     "exits": {"south": "Housing Estate"},
 
-    "items": []
+    "items": [item_voicemail],
+    "requireditems":[item_carInformation]
 }
 
 room_lab = {
@@ -100,7 +107,8 @@ His cold, apathetic look almost unnerves you, but he seems happy to help.""",
 
     "exits": {"south": "Police Station"},
 
-    "items": [item_DNA]
+    "items": [item_DNA],
+    "requireditems":[item_jumper]
 }
 
 interrogation_room = {
@@ -113,8 +121,10 @@ His arrogant facade might be hiding something.""",
 
     "exits": {"north": "Police Station"},
 
-    "items": []
+    "items": [item_alibi],
+    "requireditems":[item_warrant]
 }
+
 
 partners_house = {
     "name": "Partner's House",
@@ -125,9 +135,9 @@ not that that says much. Maybe you'll live somewhere like here one day.""",
 
     "exits": {"east": "Housing Estate"},
 
-    "items": []
+    "items": [],
+    "requireditems":[item_voicemail]
 }
-
 housing_estate = {
     "name": "Housing Estate",
 
@@ -137,7 +147,8 @@ against this backdrop of alcoholics, thugs, and prostitutes.""",
 
     "exits": {"south": "Main Street", "east": "Your Flat", "north": "Suspect's House", "west": "Partner's House"},
 
-    "items": []
+    "items": [],
+    "requireditems":[item_badge, item_gun, item_handcuffs]
 }
 
 rooms = {
