@@ -231,6 +231,35 @@ def is_valid_exit(exits, chosen_exit):
     """
     return chosen_exit in exits
 
+def interrogation_place():
+    print("1. Where were you last night?")
+    print("2. Why did you kill Sarah last night?")
+    print("3. There is no need for words. Punch him in the face.")
+    print("4. Don't ask him anything.")
+    choice= str(input("What do you choose? Type the number"))
+    normalise_input(choice)
+    while choice != "1" or choice != "2" or choice != "3":
+        print("1. Where were you last night?")
+        print("2. Why did you kill Sarah last night?")
+        print("3. There is no need for words. Punch him in the face.")
+        print("4. Don't ask him anything.")
+        choice= str(input("What do you choose? Type the number"))
+        normalise_input(choice)
+
+    if choice == "1":
+        print("I was at the bar with Sarah. Why?")
+        print("Conveniently, Claire is the suspect's girlfriend and clears him for last night.")   
+    elif choice == "2":
+        print("Fuck off, Sarah's dead? I honestly didn't know. I wasn't there.")
+        print("Conveniently, Claire is the suspect's girlfriend and clears him for last night.")   
+    elif choice == "3":
+        print("You get dragged out of the room and your partner yells at you.")
+        print("Conveniently, Claire is the suspect's girlfriend and clears him for last night.")   
+    elif choice == "4":
+        print("Conveniently, Claire is the suspect's girlfriend and clears him for last night.")        
+
+    inventory.remove[item_warrant]
+    inventory.append[item_alibi]
 
 def have_req_item(room, items):
     valid= False
@@ -257,6 +286,7 @@ def execute_go(direction):
     
         global current_room
         current_room=move(current_room["exits"],direction)
+    
     else:
         print("You cannot go there.")
 
@@ -402,7 +432,8 @@ def main():
         while True:
             print_room(current_room)
             print_inventory_items(inventory)
-
+            if current_room== rooms["Interrogation Room"]:
+                interrogation_place()
             command = menu(current_room["exits"], current_room["items"], inventory)
 
             execute_command(command)

@@ -105,7 +105,7 @@ You may knock on the door; there is, however, a first floor window open...""",
 
     "exits": {"south": "Housing Estate"},
 
-    "items": [item_voicemail],
+    "items": [item_proof],
     "requireditems":[item_carInformation]
 
 }
@@ -119,7 +119,7 @@ His cold, apathetic look almost unnerves you, but he seems happy to help.""",
 
     "exits": {"south": "Police Station"},
 
-    "items": [item_DNA],
+    "items": [item_blood],
     "requireditems":[item_jumper]
 }
 
@@ -147,7 +147,7 @@ not that that says much. Maybe you'll live somewhere like here one day.""",
     "exits": {"east": "Housing Estate"},
 
     "items": [],
-    "requireditems":[item_voicemail]
+    "requireditems":[item_proof]
 }
 
 housing_estate = {

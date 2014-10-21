@@ -61,9 +61,9 @@ item_beer = {
     "description": """ Signature bottle from the local bar.""",
     "mass": 1
 }
-item_DNA = {
-    "id": "DNA",
-    "name": "DNA",
+item_blood = {
+    "id": "blood",
+    "name": "blood",
     "description": """DNA results from the jumper found at the crime scene.""",
     "mass": 0.1
 
@@ -88,9 +88,9 @@ item_alibi = {
     "description": """Alibi clears the suspect's involvement in the crime.""",
     "mass": 0
 }
-item_voicemail = {
-    "id": "voicemail",
-    "name": "voicemail",
+item_proof = {
+    "id": "proof of absence",
+    "name": "proof of absence",
     "description": """Voicemail proving theat the suspect has been out of the country.""",
     "mass": 0
 }
