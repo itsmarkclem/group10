@@ -30,6 +30,7 @@ def list_of_items(items):
     return result
 
 
+
 def print_room_items(room):
     """This function takes a room as an input and nicely displays a list of items
     found in this room (followed by a blank line). If there are no items in
@@ -228,9 +229,9 @@ def is_valid_exit(exits, chosen_exit):
     >>> is_valid_exit(rooms["Parking"]["exits"], "east")
     True
     """
-             
     return chosen_exit in exits
 
+<<<<<<< HEAD
 def have_req_item(room, items):
     valid= False
 
@@ -238,6 +239,8 @@ def have_req_item(room, items):
         if rooms[room]["requireditems"][0] == key:
             valid= True
     return valid
+=======
+>>>>>>> 458c8661aeb061399528b1ece49f469769026139
 
 def execute_go(direction):
     """This function, given the direction (e.g. "south") updates the current room
@@ -245,6 +248,7 @@ def execute_go(direction):
     (and prints the name of the room into which the player is
     moving). Otherwise, it prints "You cannot go there."
     """
+<<<<<<< HEAD
     
     if is_valid_exit(current_room["exits"],direction) == True and (have_req_item(current_room["exits"][direction], inventory) == True):
        #a = current_room["exits"],direction
@@ -253,8 +257,11 @@ def execute_go(direction):
         #b = a.get("requireditems")
         #if b in inventory:
         global current_room
+=======
+    global current_room
+    if is_valid_exit(current_room["exits"],direction) == True:
+>>>>>>> 458c8661aeb061399528b1ece49f469769026139
         current_room=move(current_room["exits"],direction)
-
     else:
         print("You cannot go there.")
 
@@ -276,10 +283,20 @@ def execute_take(item_id):
                 break
     if found== True:
         print("You took "+str(itemtoadd["id"])+".")
+        print(itemtoadd["description"])
         inventory.append(itemtoadd)
         current_room["items"].remove(itemtoadd)
-    else:
-        print("You cannot take that")
+        
+        Continue = input("Press enter to continue")
+        if Continue != "drtuyiop[oiuytdrtfgyhiop[oihkfcxg":
+            print_room(current_room)
+            print_inventory_items(inventory)
+
+            command = menu(current_room["exits"], current_room["items"], inventory)
+
+            execute_command(command)
+        else:
+            print("You cannot take that")
 
     
 
@@ -379,19 +396,21 @@ def move(exits, direction):
 
 # This is the entry point of our program
 def main():
-
+    
+    print()
+    print("""You peel your face off the rancid floor. The first pain that hits you today is  coming from your knuckle; who knows what that's from. The second pain comes in  auditory form as your phone jolts you awake. 'Detective. Durden, get your ass   off your floor again- you're needed at 33 Park Avenue. ASAP. Jack's already on  his way.'  """)
+    print("Press enter to continue")
     # Main game loop
-    while True:
-        # Display game status (room description, inventory etc.)
-        print_room(current_room)
-        print_inventory_items(inventory)
+    start = input()
+    if start != "drtuyiop[oiuytdrtfgyhiop[oihkfcxg":
+        while True:
+            print_room(current_room)
+            print_inventory_items(inventory)
 
-        # Show the menu with possible actions and ask the player
-        command = menu(current_room["exits"], current_room["items"], inventory)
+            command = menu(current_room["exits"], current_room["items"], inventory)
 
-        # Execute the player's command
-        execute_command(command)
-
+            execute_command(command)
+    
 
 
 # Are we being run as a script? If so, run main().

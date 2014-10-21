@@ -1,17 +1,17 @@
 item_gun = {
     "id": "gun",
 
-    "name": "Gun",
+    "name": "a gun",
 
     "description":
-    """ This is your police department issued Glock, Fully loaded.""",
+    """This is your police department issued Glock, fully loaded.""",
     "mass": 2.00
 }
 
 item_badge = {
     "id": "badge",
 
-    "name": "Badge",
+    "name": "a badge",
 
     "description":
     """Your detective badge given to you by the New York Police Department.""",
@@ -21,7 +21,7 @@ item_badge = {
 item_handcuffs = {
     "id": "handcuffs",
 
-    "name": "Handcuffs",
+    "name": "a pair of handcuffs",
 
     "description":
     """Police handcuffs, use for work or pleasure. The choice is yours.""",
@@ -31,16 +31,16 @@ item_handcuffs = {
 item_jumper = {
     "id": "jumper",
 
-    "name": "Jumper",
+    "name": "a jumper",
 
-    "description": """Male jumper found on the victims body.""",
+    "description": """Male jumper found on the victims body. Maybe Dexter at the lab could find some useful information from this""",
     "mass": 0.75
 }
 
 item_handbag = {
     "id": "handbag",
     
-    "name": "Handbag",
+    "name": "a handbag",
 
     "description": """Victims handbag taken from the crime scene.""",
     "mass": 0.75
@@ -49,7 +49,7 @@ item_handbag = {
 item_watch = {
     "id": "watch",
     
-    "name": "Luxury watch",
+    "name": "a luxury watch",
 
     "description": """ This watch could sell for a lot on the streets.""",
     "mass": 1
@@ -57,7 +57,7 @@ item_watch = {
 
 item_beer = {
     "id": "beer",
-    "name": "Beer Bottle",
+    "name": "a beer bottle",
     "description": """ Signature bottle from the local bar.""",
     "mass": 1
 }
@@ -80,12 +80,6 @@ item_cctvTapes = {
     "id": "CCTV tapes",
     "name": "CCTV Tapes",
     "description": """ CCTV footage from the bar on the night of the crime.""",
-    "mass": 0.5
-}
-item_warrant = {
-    "id": "warrant",
-    "name": "Warrant",
-    "description": """Warrant to bring a suspect in for questioning.""",
     "mass": 0.5
 }
 item_alibi = {
