@@ -12,7 +12,7 @@ it looks like it hasn't been cleaned in years. But it's home, nonetheless.""",
     "exits": {"west": "Housing Estate"},
 
     "items": [item_gun, item_handcuffs, item_badge],
-    "requireditems":[]
+    "requireditems":[item_badge]
 }
 
 the_hub = {
@@ -25,7 +25,7 @@ And by whole world, I mean a few select locations within New York.""",
     "exits":  {"north": "Housing Estate", "south": "Crime Scene", "east": "Police Station", "west": "Bar"},
 
     "items": [],
-    "requireditems":[item_badge, item_gun, item_handcuffs]
+    "requireditems":[item_badge]
 }
 
 crime_scene = {
@@ -40,7 +40,7 @@ men's jumper.""",
     "exits": {"north": "Main Street"},
 
     "items": [item_jumper, item_handbag, item_watch, item_beer],
-    "requireditems":[]
+    "requireditems":[item_badge]
 }
 
 police_station = {
@@ -53,7 +53,7 @@ She might help you get people in for questioning if you're lucky.""",
     "exits": {"west": "Main Street", "south": "Interrogation Room", "north": "Lab"},
 
     "items": [item_warrant],
-    "requireditems":[]
+    "requireditems":[item_badge]
 }
 
 room_bar = {
@@ -67,7 +67,7 @@ as it happens to smell approximately like a toilet
     "exits": {"east": "Main Street", "west": "CCTV Room"},
 
     "items": [],
-    "requireditems":[]
+    "requireditems":[item_badge]
 }
 
 CCTV_room = {
@@ -148,7 +148,7 @@ against this backdrop of alcoholics, thugs, and prostitutes.""",
     "exits": {"south": "Main Street", "east": "Your Flat", "north": "Suspect's House", "west": "Partner's House"},
 
     "items": [],
-    "requireditems":[item_badge, item_gun, item_handcuffs]
+    "requireditems":[item_badge]
 }
 
 rooms = {

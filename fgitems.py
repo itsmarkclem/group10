@@ -65,7 +65,7 @@ item_DNA = {
     "id": "DNA",
     "name": "DNA",
     "description": """DNA results from the jumper found at the crime scene.""",
-    "mass": 0.5
+    "mass": 0.1
 
 }
 

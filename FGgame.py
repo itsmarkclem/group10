@@ -236,9 +236,7 @@ def have_req_item(room, items):
 
     for key in items: 
         if rooms[room]["requireditems"][0] == key:
-
             valid= True
-
     return valid
 
 def execute_go(direction):
@@ -248,7 +246,7 @@ def execute_go(direction):
     moving). Otherwise, it prints "You cannot go there."
     """
     
-    if is_valid_exit(current_room["exits"],direction) == True and (have_req_item(current_room["exits"][direction], inventory) == True or rooms[current_room["exits"][direction]]["requireditems"] == []):
+    if is_valid_exit(current_room["exits"],direction) == True and (have_req_item(current_room["exits"][direction], inventory) == True):
        #a = current_room["exits"],direction
         #if have_req_item(current_room["exits"][direction], inventory) == True or current_room["exits"][direction] == []:
         #a = (current_room["exits"][direction])
