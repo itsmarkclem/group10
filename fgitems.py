@@ -94,3 +94,10 @@ item_voicemail = {
     "description": """Voicemail proving theat the suspect has been out of the country.""",
     "mass": 0
 }
+
+item_warrant = {
+    "id": "warrant",
+    "name": "Warrant",
+    "description": """Warrant to bring a suspect in for questioning.""",
+    "mass": 0.5
+}
