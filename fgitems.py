@@ -70,7 +70,7 @@ item_beer = {
 }
 item_blood = {
     "id": "blood",
-    "name": "blood",
+    "name": "blood sample results",
     "description": """DNA results from the jumper found at the crime scene.""",
     "mass": 0.1,
     "karma": 0
