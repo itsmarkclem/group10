@@ -4,6 +4,7 @@ from FGmap import rooms
 from FGplayer import *
 from fgitems import *
 from FGgameparser import *
+import sys
 
 
 
@@ -161,7 +162,9 @@ def print_exit(direction, leads_to):
     >>> print_exit("south", "Robs' room")
     GO SOUTH to Robs' room.
     """
-    print("GO " + direction.upper() + " to " + leads_to + ".")
+
+    if rooms[current_room["exits"][direction]]["isvisible"]==True:
+        print("GO " + direction.upper() + " to " + leads_to + ".")
 
 
 def print_menu(exits, room_items, inv_items):
@@ -252,11 +255,11 @@ def interrogation_place():
     elif choice == "2":
         print("Fuck off, Sarah's dead? I honestly didn't know. I wasn't there.")
         print("Conveniently, Claire is the suspect's girlfriend and clears him for last night.")
-        item_alibi["karma"] = -2   
+        item_alibi["karma"] = -5   
     elif choice == "3":
         print("You get dragged out of the room and your partner yells at you.")
         print("Conveniently, Claire is the suspect's girlfriend and clears him for last night.")
-        item_alibi["karma"] = -5     
+        item_alibi["karma"] = -10     
     elif choice == "4":
         print("Conveniently, Claire is the suspect's girlfriend and clears him for last night.")         
 
@@ -266,6 +269,41 @@ def interrogation_place():
     print("\n"+"The suspect has an alibi. Maybe we should head back to the pub.")
     print(item_alibi["description"])
     print()
+
+def breaking_in():
+    isvalid = False
+    while isvalid == False:
+        print("1. Break in?")
+        print("2. Ask neighbour about their whereabouts")
+
+        choice= str(input("What do you choose? Type the number"+"\n"))
+        if choice =="1" or choice =="2":
+            isvalid = True
+        else:
+            print("\n"+"That is not a valid input."+"\n")
+
+    if choice == "1":
+        print("""You force yourself in through the back door; you don't think anyone noticed. 
+            This place seems clean. Too clean. 
+            Upon looking around, you find their home telephone, it rings. 
+            You freeze and wait for the voicemail to click in. 
+            'Hi, this is Matt, I'm out of town for the next 2 months. I'll try and get back to you when I return! Sorry!'
+            Damn...""")
+        item_voicemail["karma"] = -7
+        itemtoadd = item_voicemail  
+    elif choice == "2":
+        print("""You knock on the neighbour's door to find a rather lovely little old woman, who immediately offers you
+            some cookies and milk. 'They're my special cookies, dear? Oh okay then. I'm sorry but you can't get a hold of Matt
+            for the next month and a half or so- he's gone travelling. What's this all about anyway?'
+            You immediately walk off... This can only mean one thing...""")
+        item_proof["karma"] = 5
+        itemtoadd = item_proof
+
+    inventory.append(itemtoadd)
+    print ("\n"+str(itemtoadd["description"]))
+
+
+
 
 def have_req_item(room, items):
     valid= False
@@ -313,6 +351,12 @@ def execute_take(item_id):
             if (current_mass+itemtoadd["mass"])>5:
                 found = False
                 break
+    for item in inventory:
+        if item["name"] == item_car["name"]:
+            rooms["Suspect's House"]["isvisible"]= True
+        elif item["name"] == item_alibi["name"]:
+            rooms["CCTV Room"]["isvisible"]= True
+
     if found== True:
         print("You took "+str(itemtoadd["id"])+".")
         print(itemtoadd["description"])
@@ -340,10 +384,38 @@ def calculate_karma(inventory):
     return karma
 
 def calculate_outcome(karma):
+    gunavailable = False
+    handcuffsav = False
+    for item in inventory:
+        if item == item_gun:
+            gunavailable = True
+        elif item == item_handcuffs:
+            handcuffsav = True
+
     if karma <=0:
-        print()
+        print("""It's only a matter of time before your partner finds out that Matt's been out of the country. He's going to know.
+            I can't let him know. I need to dispose of him...""")
+        if gunavailable == True:
+            print("you shoot him")
+        elif gunavailable == False:
+            print("he shoots you")
+
     elif karma >0:
-        print()
+        print("""I don't know what possessed him, but I never did trust him. I knew he was involved in some shady shit, I should stop
+            him before he escapes.""")
+        if gunavailable == True and handcuffsav== False:
+            print("you shooot him")
+        elif gunavailable == False and handcuffsav== False:
+            print("he shoots you")
+        elif gunavailable == True and handcuffsav == True:
+            print("you arrest him")
+    print("Congratulations. You have reached the end of the game.")
+    print("Press enter to close.")
+    end = input()
+    if end != "drtuyiop[oiuytdrtfgyhiop[oihkfcxg":
+        sys.exit()
+
+
 
 def execute_drop(item_id):
     """This function takes an item_id as an argument and moves this item from the
@@ -454,6 +526,10 @@ def main():
             print_inventory_items(inventory)
             if current_room== rooms["Interrogation Room"]:
                 interrogation_place()
+            elif current_room == rooms["Suspect's House"]:
+                breaking_in()
+            elif current_room == rooms["Partner's House"]:
+                calculate_outcome(karma)
             command = menu(current_room["exits"], current_room["items"], inventory)
 
             execute_command(command)

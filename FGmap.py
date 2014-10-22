@@ -13,7 +13,8 @@ it looks like it hasn't been cleaned in years. But it's home, nonetheless.""",
 
 
     "items": [item_gun, item_handcuffs, item_badge],
-    "requireditems":[item_badge]
+    "requireditems":[item_badge],
+    "isvisible": True
 
 }
 
@@ -28,7 +29,8 @@ And by whole world, I mean a few select locations within New York.""",
 
 
     "items": [],
-    "requireditems":[item_badge]
+    "requireditems":[item_badge],
+    "isvisible": True
 
 }
 
@@ -45,7 +47,8 @@ men's jumper.""",
 
 
     "items": [item_jumper, item_handbag, item_watch, item_beer],
-    "requireditems":[item_badge]
+    "requireditems":[item_badge],
+    "isvisible": True
 
 }
 
@@ -53,14 +56,15 @@ police_station = {
     "name": "Police Station",
 
     "description":
-    """You are awkwardly standing at the desk of your coworker, Claire. 
-She might help you get people in for questioning if you're lucky.""",
+    """The smell of donuts is more rife than actual policework in this place. Oh well, at least they're 
+pretty good donuts.""",
 
-    "exits": {"west": "Main Street", "south": "Interrogation Room", "north": "Lab"},
+    "exits": {"west": "Main Street", "south": "Interrogation Room", "north": "Lab", "east": "Claire's Office"},
 
 
-    "items": [item_warrant],
-    "requireditems":[item_badge]
+    "items": [],
+    "requireditems":[item_badge],
+    "isvisible": True
 
 
 }
@@ -76,8 +80,9 @@ as it happens to smell approximately like a toilet
     "exits": {"east": "Main Street", "west": "CCTV Room"},
 
 
-    "items": [],
-    "requireditems":[item_beer]
+    "items": [item_barman],
+    "requireditems":[item_beer],
+    "isvisible": True
 
 }
 
@@ -92,7 +97,8 @@ Maybe you can find something on the tape of last night.""",
     "exits": {"east": "Bar"},
 
     "items": [item_car],
-    "requireditems":[item_alibi]
+    "requireditems":[item_alibi],
+    "isvisible": False
 
 }
 suspect_house = {
@@ -106,7 +112,8 @@ You may knock on the door; there is, however, a first floor window open...""",
     "exits": {"south": "Housing Estate"},
 
     "items": [item_proof],
-    "requireditems":[item_car]
+    "requireditems":[item_car],
+    "isvisible": False
 
 }
 
@@ -120,7 +127,8 @@ His cold, apathetic look almost unnerves you, but he seems happy to help.""",
     "exits": {"south": "Police Station"},
 
     "items": [item_blood],
-    "requireditems":[item_jumper]
+    "requireditems":[item_jumper],
+    "isvisible": True
 }
 
 interrogation_room = {
@@ -134,7 +142,8 @@ His arrogant facade might be hiding something.""",
     "exits": {"north": "Police Station"},
 
     "items": [],
-    "requireditems":[item_warrant]
+    "requireditems":[item_warrant],
+    "isvisible": True
 }
 
 partners_house = {
@@ -147,7 +156,8 @@ not that that says much. Maybe you'll live somewhere like here one day.""",
     "exits": {"east": "Housing Estate"},
 
     "items": [],
-    "requireditems":[item_proof]
+    "requireditems":[item_proof],
+    "isvisible": True
 }
 
 housing_estate = {
@@ -160,9 +170,26 @@ against this backdrop of alcoholics, thugs, and prostitutes.""",
     "exits": {"south": "Main Street", "east": "Your Flat", "north": "Suspect's House", "west": "Partner's House"},
 
     "items": [],
-    "requireditems":[item_badge]
+    "requireditems":[item_badge],
+    "isvisible": True
 
 }
+
+room_office = {
+    "name": "Claire's Office",
+
+    "description":
+    """You are awkwardly standing at the desk of your coworker, Claire. 
+She might help you get people in for questioning if you're lucky.""",
+
+    "exits": {"west": "Police Station"},
+
+    "items": [item_warrant],
+    "requireditems":[item_badge,item_blood,item_barman],
+    "isvisible": True
+
+}
+
 
 rooms = {
     "Main Street": the_hub,
@@ -175,5 +202,6 @@ rooms = {
     "CCTV Room": CCTV_room,
     "Bar": room_bar,
     "Partner's House": partners_house,
-    "Housing Estate": housing_estate
+    "Housing Estate": housing_estate,
+    "Claire's Office": room_office
 }

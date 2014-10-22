@@ -48,7 +48,7 @@ item_handbag = {
 
     "description": """Victims handbag taken from the crime scene.""",
     "mass": 0.75,
-    "karma": -7
+    "karma": -3
 }
 
 item_watch = {
@@ -58,7 +58,7 @@ item_watch = {
 
     "description": """ This watch could sell for a lot on the streets.""",
     "mass": 1,
-    "karma": 0
+    "karma": -5
 }
 
 item_beer = {
@@ -78,18 +78,10 @@ item_blood = {
 }
 
 
-item_carInformation = {
-    "id": "car information",
-    "name": "car information",
-    "description": """Car information of suspect obtained from the bar cctv footage.""",
-    "mass": 0,
-    "karma": 0
-}
-
 item_car = {
     "id": "information",
     "name": "information",
-    "description": """This is information about a car licece plate.""",
+    "description": """This is information about a car.The description matches my car, my partner's car and Matt Morgan's car.""",
     "mass": 0.5,
     "karma": 0
 
@@ -104,7 +96,7 @@ item_alibi = {
 item_proof = {
     "id": "proof of absence",
     "name": "proof of absence",
-    "description": """Voicemail proving theat the suspect has been out of the country.""",
+    "description": """Apparently the suspect is out of the country. This only leaves one possibility...""",
     "mass": 0,
     "karma": 0
 }
@@ -113,6 +105,22 @@ item_warrant = {
     "id": "warrant",
     "name": "Warrant",
     "description": """Warrant to bring a suspect in for questioning.""",
+    "mass": 0,
+    "karma": 0
+}
+
+item_voicemail = {
+    "id": "voicemail",
+    "name": "voicemail",
+    "description": """Voicemail proving theat the suspect has been out of the country.""",
+    "mass": 0,
+    "karma": 0
+}
+
+item_barman = {
+    "id": "picture",
+    "name": "picture",
+    "description": """CCTV footage from the bar showing the suspect getting wasted at the bar.""",
     "mass": 0,
     "karma": 0
 }
