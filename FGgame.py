@@ -366,6 +366,7 @@ def execute_take(item_id):
             itemtoadd=item
             if (current_mass+itemtoadd["mass"])>5:
                 found = False
+                print("You are carrying too many things.")
                 break
 
     if found== True:
