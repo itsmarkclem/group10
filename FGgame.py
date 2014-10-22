@@ -407,7 +407,7 @@ def calculate_outcome(karma):
 
     if karma <=0:
         print("""It's only a matter of time before your partner finds out that Matt's been out of the country. He's going to know.
-            I can't let him know. I need to dispose of him...""")
+I can't let him know. I need to dispose of him...""")
         if gunavailable == True:
             print("you shoot him")
         elif gunavailable == False:
@@ -564,6 +564,8 @@ The Back Street Butcher has hit again. Jack's already on  his way.'""")
                 calculate_outcome(karma)
             elif current_room == rooms["Lab"]:
                 inventory.remove(item_jumper)
+            elif current_room == rooms["Claire's Office"]:
+                inventory.remove(item_blood)
 
             for item in inventory:
                 if item["name"] == item_car["name"]:

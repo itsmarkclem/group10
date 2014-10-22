@@ -69,9 +69,10 @@ item_beer = {
     "karma": 1
 }
 item_blood = {
-    "id": "blood",
-    "name": "blood sample results",
-    "description": """DNA results from the jumper found at the crime scene.""",
+    "id": "sample",
+    "name": "blood sample details",
+    "description": """DNA results, belonging to Stuart Allen, from the jumper found at the crime scene. This in combination with
+some confirmation that Allen was at the bar last night might be enough for a warrant.""",
     "mass": 0.1,
     "karma": 0
 
@@ -81,7 +82,8 @@ item_blood = {
 item_car = {
     "id": "information",
     "name": "information",
-    "description": """This is information about a car.The description matches my car, my partner's car and Matt Morgan's car.""",
+    "description": """This is information about a car. The description matches my car, my partner's car and Matt Morgan's car.
+Maybe we should check out Matt's house. He lives in the housing estate.""",
     "mass": 0.5,
     "karma": 0
 
@@ -104,7 +106,8 @@ item_proof = {
 item_warrant = {
     "id": "warrant",
     "name": "Warrant",
-    "description": """Warrant to bring a suspect in for questioning.""",
+    "description": """Warrant to bring a suspect in for questioning. You're lucky that the department is very efficient
+and the suspect is ready for interrogation.""",
     "mass": 0,
     "karma": 0
 }
