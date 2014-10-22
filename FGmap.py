@@ -106,8 +106,8 @@ suspect_house = {
 
     "description":
     """You arrive at the front door of the house. 
-You can hear music pumping from the neighbour's house. 
-You may knock on the door; there is, however, a first floor window open...""",
+You can smell suspicious cookies coming from the house next door. 
+You may knock on the door; however, you may elect to try the backdoor entry...""",
 
     "exits": {"south": "Housing Estate"},
 

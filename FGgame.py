@@ -290,7 +290,8 @@ You freeze and wait for the voicemail to click in.
 'Hi, this is Matt, I'm out of town for the next 2 months. I'll try and get back to you when I return! Sorry!'
 Damn...""")
         item_proof["karma"] = -7
-        item_proof["description"]= "Voicemail proving theat the suspect has been out of the country."   
+        item_proof["description"]= """Voicemail proving theat the suspect has been out of the country. This leaves the culprit being
+only you or your partner..."""   
     elif choice == "2":
         print('\n' + """You knock on the neighbour's door to find a rather lovely little old woman, who immediately offers you
 some cookies and milk. 'They're my special cookies, dear? Oh okay then. I'm sorry but you can't get a hold of Matt
@@ -412,9 +413,20 @@ def calculate_outcome(karma):
         print("""It's only a matter of time before your partner finds out that Matt's been out of the country. He's going to know.
 I can't let him know. I need to dispose of him...""")
         if gunavailable == True:
-            print("you shoot him")
+            print("""Jack will find out. He can't find out. I need to cover my tracks. Tracks that I didn't even remember that I made.
+I assumed that I made them. I mean, who else would've? Jack's far too good a cop to do this. If I'm the Back Street Butcher, then
+I'm shitty enough to kill my partner. This is the day he dies. I'm sorry, Jack.
+You find Jack asleep on the couch. He left the crime scene ill, earlier. He's out of it. You raise your glock to his eye socket, and pull
+the trigger. He's gone.
+The sound of his skull shattering reverberates around the room. It's over.""")
         elif gunavailable == False:
-            print("he shoots you")
+            print("""'I can't believe what I am. Who I am. I never would've thought my blackouts coud possibly be indicative of this.
+I don't think I could live with this burden. It's too much for any one person to handle. I need to die.''
+You find Jack making a cup of coffee in his kitchen. He is shocked by your presence and wonders why you are here.
+Before even thinking about an answer, you tackle him to the floor. Jack quickly puts the pieces together in his head and reaches
+for his pistol on his kitchen stool. You climb back to your feet and stare down at Jack...
+'Do it.'
+He shot echoes into the street. The killer has been stopped. You have been stopped. Your story has concluded.""")
 
     elif karma >0:
         print("""I don't know what possessed him, but I never did trust him. I knew he was involved in some shady shit, I should stop
@@ -439,8 +451,10 @@ Sarah's body was utterly brutalised. There's no rational explanation for what he
 as I can get- I have my gun and my handcuffs. Hopefully he will see that he cannot win, he cannot go on. 
 I'm going to take him down myself.'
 Jack's asleep on his sofa; before he has time to react, your gun's barrel is making itself at home on his temple. He looks expasperated
-as the chink of the handcuffs signifies the hopeful end of this case and the of Jack's reign of terror.""")
+as the chink of the handcuffs around his wrists signifies the hopeful end of this case and the of Jack's reign of terror.""")
     print("Congratulations. You have reached the end of the game.""")
+    karma = calculate_karma(inventory)
+    print("Your karma was:" + str(karma))
     print("Press enter to close.")
     end = input()
     if end != "drtuyiop[oiuytdrtfgyhiop[oihkfcxg":
