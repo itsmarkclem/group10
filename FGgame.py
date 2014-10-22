@@ -562,6 +562,8 @@ def main():
                 breaking_in()
             elif current_room == rooms["Partner's House"]:
                 calculate_outcome(karma)
+            elif current_room == rooms["Lab"]:
+                inventory.remove(item_jumper)
 
             for item in inventory:
                 if item["name"] == item_car["name"]:
