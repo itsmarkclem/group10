@@ -70,7 +70,7 @@ item_beer = {
 }
 item_blood = {
     "id": "sample",
-    "name": "blood sample details",
+    "name": "hair sample incriminating Stuart Allen",
     "description": """DNA results, belonging to Stuart Allen, from the jumper found at the crime scene. This in combination with
 some confirmation that Allen was at the bar last night might be enough for a warrant.""",
     "mass": 0.1,
@@ -105,7 +105,7 @@ item_proof = {
 
 item_warrant = {
     "id": "warrant",
-    "name": "Warrant",
+    "name": "warrant",
     "description": """Warrant to bring a suspect in for questioning. You're lucky that the department is very efficient
 and the suspect is ready for interrogation.""",
     "mass": 0,

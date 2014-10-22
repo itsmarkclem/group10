@@ -122,7 +122,8 @@ room_lab = {
 
     "description":
     """You find yourself acquianted with Dexter, his ginger hair lights up the room.
-His cold, apathetic look almost unnerves you, but he seems happy to help.""",
+His cold, apathetic look almost unnerves you, but he seems happy to help.
+This is proven as he takes the jumper and swiftly processes it, giving you a hair sample in return.""",
 
     "exits": {"south": "Police Station"},
 
