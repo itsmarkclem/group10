@@ -126,7 +126,7 @@ His cold, apathetic look almost unnerves you, but he seems happy to help.""",
 
     "exits": {"south": "Police Station"},
 
-    "items": [item_blood],
+    "items": [],
     "requireditems":[item_jumper],
     "isvisible": True
 }

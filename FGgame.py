@@ -302,6 +302,9 @@ You immediately walk off... This can only mean one thing...""")
     inventory.append(item_proof)
     inventory.remove(item_car)
     print ("\n"+str(item_proof["description"]))
+    global current_room
+    print("\n"+"You are now back in the Housing Estate."+"\n")
+    current_room = rooms["Housing Estate"]
 
 
 
@@ -563,6 +566,7 @@ The Back Street Butcher has hit again. Jack's already on  his way.'""")
             elif current_room == rooms["Partner's House"]:
                 calculate_outcome(karma)
             elif current_room == rooms["Lab"]:
+                inventory.append(item_blood)
                 inventory.remove(item_jumper)
             elif current_room == rooms["Claire's Office"]:
                 inventory.remove(item_blood)
