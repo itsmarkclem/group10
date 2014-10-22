@@ -343,15 +343,8 @@ def execute_go(direction):
     moving). Otherwise, it prints "You cannot go there."
     """
 
-    
+    global current_room
     if is_valid_exit(current_room["exits"],direction) == True and (have_req_item(current_room["exits"][direction], inventory) == True):
-       #a = current_room["exits"],direction
-        #if have_req_item(current_room["exits"][direction], inventory) == True or current_room["exits"][direction] == []:
-        #a = (current_room["exits"][direction])
-        #b = a.get("requireditems")
-        #if b in inventory:
-    
-        global current_room
         current_room=move(current_room["exits"],direction)
     
     else:
