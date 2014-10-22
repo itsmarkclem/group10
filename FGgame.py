@@ -568,6 +568,7 @@ The Back Street Butcher has hit again. Jack's already on  his way.'""")
             elif current_room == rooms["Lab"]:
                 inventory.append(item_blood)
                 inventory.remove(item_jumper)
+                print(item_blood["description"])
             elif current_room == rooms["Claire's Office"]:
                 inventory.remove(item_blood)
 
