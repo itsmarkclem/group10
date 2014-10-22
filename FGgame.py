@@ -439,7 +439,7 @@ He shot echoes into the street. The killer has been stopped. You have been stopp
 
     elif karma >0:
         print("""I don't know what possessed him, but I never did trust him. I knew he was involved in some shady shit, I should stop
-            him before he escapes.""")
+him before he escapes.""")
         if gunavailable == True and handcuffsav== False:
             print("""'I've never been to his house before now; he's never invited me. No surprise after what my life has become.
 Or maybe he's the one hiding things? Well, his facade has finally broken. His arrogance has got to him as he's currently
@@ -577,6 +577,7 @@ The second pain comes in auditory form as your phone jolts you awake.
 The Back Street Butcher has hit again. Jack's already on  his way.'""")
     print("Press enter to continue")
     # Main game loop
+    global current_room
     start = input()
     if start != "drtuyiop[oiuytdrtfgyhiop[oihkfcxg":
         while True:
@@ -591,12 +592,16 @@ The Back Street Butcher has hit again. Jack's already on  his way.'""")
             elif current_room == rooms["Lab"]:
                 inventory.append(item_blood)
                 inventory.remove(item_jumper)
-                global current_room
                 current_room = rooms["Police Station"]
                 print(item_blood["description"])
                 print("You return to the Police Station."+"\n")
             elif current_room == rooms["Claire's Office"]:
-                inventory.remove(item_blood)
+                for item in inventory:
+                    if item == item_blood:
+                        if item == item_warrant:
+                            inventory.remove(item_blood)
+
+            
 
             for item in inventory:
                 if item["name"] == item_car["name"]:
