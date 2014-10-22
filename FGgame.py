@@ -289,28 +289,51 @@ def breaking_in():
             You freeze and wait for the voicemail to click in. 
             'Hi, this is Matt, I'm out of town for the next 2 months. I'll try and get back to you when I return! Sorry!'
             Damn...""")
-        item_voicemail["karma"] = -7
-        itemtoadd = item_voicemail  
+        item_proof["karma"] = -7
+        item_proof["description"]= "Voicemail proving theat the suspect has been out of the country."   
     elif choice == "2":
         print("""You knock on the neighbour's door to find a rather lovely little old woman, who immediately offers you
             some cookies and milk. 'They're my special cookies, dear? Oh okay then. I'm sorry but you can't get a hold of Matt
             for the next month and a half or so- he's gone travelling. What's this all about anyway?'
             You immediately walk off... This can only mean one thing...""")
         item_proof["karma"] = 5
-        itemtoadd = item_proof
+  
 
-    inventory.append(itemtoadd)
-    print ("\n"+str(itemtoadd["description"]))
+    inventory.append(item_proof)
+    print ("\n"+str(item_proof["description"]))
 
 
 
 
 def have_req_item(room, items):
     valid= False
-
-    for key in items: 
-        if rooms[room]["requireditems"][0] == key:
+    if len(rooms[room]["requireditems"]) == 3:
+        valid1= False
+        valid2= False
+        valid3 = False
+        for i in items:
+            if rooms[room]["requireditems"][0] == i:
+                valid1 = True
+            if rooms[room]["requireditems"][1] == i:
+                valid2 = True
+            if rooms[room]["requireditems"][2] == i:
+                valid3 = True
+        if valid1== True and valid2 == True and valid3== True:
             valid= True
+    elif len(rooms[room]["requireditems"]) == 2:
+        valid1= False
+        valid2= False
+        for i in items:
+            if rooms[room]["requireditems"][0] == i:
+                valid1 = True
+            if rooms[room]["requireditems"][1] == i:
+                valid2 = True
+        if valid1== True and valid2 ==True:
+            valid= True
+    elif len(rooms[room]["requireditems"]) ==1:
+        for key in items: 
+            if rooms[room]["requireditems"][0] == key:
+                valid= True
     return valid
 
 def execute_go(direction):
@@ -332,7 +355,7 @@ def execute_go(direction):
         current_room=move(current_room["exits"],direction)
     
     else:
-        print("You cannot go there.")
+        print("There is no reason to go there.")
 
 
 def execute_take(item_id):
@@ -351,11 +374,6 @@ def execute_take(item_id):
             if (current_mass+itemtoadd["mass"])>5:
                 found = False
                 break
-    for item in inventory:
-        if item["name"] == item_car["name"]:
-            rooms["Suspect's House"]["isvisible"]= True
-        elif item["name"] == item_alibi["name"]:
-            rooms["CCTV Room"]["isvisible"]= True
 
     if found== True:
         print("You took "+str(itemtoadd["id"])+".")
@@ -516,7 +534,7 @@ def move(exits, direction):
 def main():
     
     print()
-    print("""You peel your face off the rancid floor. The first pain that hits you today is  coming from your knuckle; who knows what that's from. The second pain comes in  auditory form as your phone jolts you awake. 'Detective. Durden, get your ass   off your floor again- you're needed at 33 Park Avenue. ASAP. Jack's already on  his way.'  """)
+    print("""You peel your face off the rancid floor. The first pain that hits you today is  coming from your knuckle; who knows what that's from. The second pain comes in  auditory form as your phone jolts you awake. 'Detective. Durden, get your ass off your floor again- you're needed at 33 Park Avenue, SOUTH of MAIN STREET. ASAP. Jack's already on  his way.'  """)
     print("Press enter to continue")
     # Main game loop
     start = input()
@@ -530,6 +548,16 @@ def main():
                 breaking_in()
             elif current_room == rooms["Partner's House"]:
                 calculate_outcome(karma)
+
+            for item in inventory:
+                if item["name"] == item_car["name"]:
+                    rooms["Suspect's House"]["isvisible"]= True
+                elif item["name"] == item_alibi["name"]:
+                    rooms["CCTV Room"]["isvisible"]= True
+                elif item["name"] == item_beer["name"]:
+                    rooms["Bar"]["isvisible"]= True
+                elif item["name"] == item_proof["name"]:
+                    rooms["Partner's House"]["isvisible"]= True
             command = menu(current_room["exits"], current_room["items"], inventory)
 
             execute_command(command)

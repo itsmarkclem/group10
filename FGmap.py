@@ -82,7 +82,7 @@ as it happens to smell approximately like a toilet
 
     "items": [item_barman],
     "requireditems":[item_beer],
-    "isvisible": True
+    "isvisible": False
 
 }
 
@@ -111,7 +111,7 @@ You may knock on the door; there is, however, a first floor window open...""",
 
     "exits": {"south": "Housing Estate"},
 
-    "items": [item_proof],
+    "items": [],
     "requireditems":[item_car],
     "isvisible": False
 
@@ -157,7 +157,7 @@ not that that says much. Maybe you'll live somewhere like here one day.""",
 
     "items": [],
     "requireditems":[item_proof],
-    "isvisible": True
+    "isvisible": False
 }
 
 housing_estate = {
@@ -185,7 +185,7 @@ She might help you get people in for questioning if you're lucky.""",
     "exits": {"west": "Police Station"},
 
     "items": [item_warrant],
-    "requireditems":[item_badge,item_blood,item_barman],
+    "requireditems":[item_badge, item_blood, item_barman],
     "isvisible": True
 
 }
