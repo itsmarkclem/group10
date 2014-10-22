@@ -266,7 +266,7 @@ def interrogation_place():
     inventory.remove(item_warrant)
     inventory.append(item_alibi)
     calculate_karma(inventory)
-    print("\n"+"The suspect has an alibi. Maybe we should head back to the pub.")
+    print("\n"+"The suspect has an alibi. Maybe there's more to explore back at the bar.")
     print(item_alibi["description"])
     print()
 
@@ -283,19 +283,19 @@ def breaking_in():
             print("\n"+"That is not a valid input."+"\n")
 
     if choice == "1":
-        print("""You force yourself in through the back door; you don't think anyone noticed. 
-            This place seems clean. Too clean. 
-            Upon looking around, you find their home telephone, it rings. 
-            You freeze and wait for the voicemail to click in. 
-            'Hi, this is Matt, I'm out of town for the next 2 months. I'll try and get back to you when I return! Sorry!'
-            Damn...""")
+        print('\n' + """You force yourself in through the back door; you don't think anyone noticed. 
+This place seems clean. Too clean. 
+Upon looking around, you find their home telephone, it rings. 
+You freeze and wait for the voicemail to click in. 
+'Hi, this is Matt, I'm out of town for the next 2 months. I'll try and get back to you when I return! Sorry!'
+Damn...""")
         item_proof["karma"] = -7
         item_proof["description"]= "Voicemail proving theat the suspect has been out of the country."   
     elif choice == "2":
-        print("""You knock on the neighbour's door to find a rather lovely little old woman, who immediately offers you
-            some cookies and milk. 'They're my special cookies, dear? Oh okay then. I'm sorry but you can't get a hold of Matt
-            for the next month and a half or so- he's gone travelling. What's this all about anyway?'
-            You immediately walk off... This can only mean one thing...""")
+        print('\n' + """You knock on the neighbour's door to find a rather lovely little old woman, who immediately offers you
+some cookies and milk. 'They're my special cookies, dear? Oh okay then. I'm sorry but you can't get a hold of Matt
+for the next month and a half or so- he's gone travelling. What's this all about anyway?'
+You immediately walk off... This can only mean one thing...""")
         item_proof["karma"] = 5
   
 
@@ -417,27 +417,26 @@ def calculate_outcome(karma):
             him before he escapes.""")
         if gunavailable == True and handcuffsav== False:
             print("""'I've never been to his house before now; he's never invited me. No surprise after what my life has become.
-                Or maybe he's the one hiding things? Well, his facade has finally broken. His arrogance has got to him as he's currently
-                just sat on the john. Door wide open. Shit, I forgot my handcuffs- this isn't going to go well. I can't run now, he could
-                get away. Maybe I could claim it was self defence...'
-                With no remose, you unload 5 slugs into Jack's chest and watch as his empty expression slowly becomes statue. You've stopped him.""")
+Or maybe he's the one hiding things? Well, his facade has finally broken. His arrogance has got to him as he's currently
+just sat on the john. Door wide open. Shit, I forgot my handcuffs- this isn't going to go well. I can't run now, he could
+get away. Maybe I could claim it was self defence...'
+With no remose, you unload 5 slugs into Jack's chest and watch as his empty expression slowly becomes statue. You've stopped him.""")
         elif gunavailable == False and handcuffsav== False:
             print("""'Jack always was a funny one. Very cold. A little too interested in the cases. Always understanding the killers a little too much
-                Creeped me right out; but I guess he always friendly enough. Maybe I can talk him out of it... He should notice that I'm unarmed, right.'
-                Jack wasn't in the usual friendly mood. He didn't give me a chance to ask why. He jumps on me and places his hands around my neck. 
-                His facial muscles don't move an inch. By contrast, my face is a screwed up mess trying to breathe in every last molecule of oxygen
-                that it can find. His face becomes a blur the shock subsides and I accept my fate. I was so close, yet now I am so far.
-                I am Jack's latest victim.""")
+Creeped me right out; but I guess he always friendly enough. Maybe I can talk him out of it... He should notice that I'm unarmed, right.'
+Jack wasn't in the usual friendly mood. He didn't give me a chance to ask why. He jumps on me and places his hands around my neck. 
+His facial muscles don't move an inch. By contrast, my face is a screwed up mess trying to breathe in every last molecule of oxygen
+that it can find. His face becomes a blur the shock subsides and I accept my fate. I was so close, yet now I am so far.
+I am Jack's latest victim.""")
         elif gunavailable == True and handcuffsav == True:
             print("""'I can't believe that Jack could do this when he works for the force. I would never ever think of going against my loyalties.
-                I can't fathom what would bring him to do such a thing. I wonder if he can justify himself. If that's even possible.
-                Sarah's body was utterly brutalised. There's no rational explanation for what he did to her and her body. I've come as prepared
-                as I can get- I have my gun and my handcuffs. Hopefully he will see that he cannot win, he cannot go on. 
-                I'm going to take him down myself.'
-                Jack's asleep on his sofa; before he has time to react, your gun's barrel is making itself at home on his temple. He looks expasperated
-                as the chink of the handcuffs signifies the hopeful end of this case and the of Jack's reign of terror.""")
+I can't fathom what would bring him to do such a thing. I wonder if he can justify himself. If that's even possible.
+Sarah's body was utterly brutalised. There's no rational explanation for what he did to her and her body. I've come as prepared
+as I can get- I have my gun and my handcuffs. Hopefully he will see that he cannot win, he cannot go on. 
+I'm going to take him down myself.'
+Jack's asleep on his sofa; before he has time to react, your gun's barrel is making itself at home on his temple. He looks expasperated
+as the chink of the handcuffs signifies the hopeful end of this case and the of Jack's reign of terror.""")
     print("Congratulations. You have reached the end of the game.""")
-    print("Congratulations. You have reached the end of the game.")
     print("Press enter to close.")
     end = input()
     if end != "drtuyiop[oiuytdrtfgyhiop[oihkfcxg":
@@ -544,11 +543,11 @@ def move(exits, direction):
 def main():
     
     print()
-    print("""'You peel your face off the rancid floor. 
-        The first pain that hits you today is coming from your knuckle; who knows what that's from. 
-        The second pain comes in  auditory form as your phone jolts you awake. 
-        'Detective. Durden, it's Commissioner Sidorov, get your ass off your floor again- you're needed at 33 Park Avenue, SOUTH of MAIN STREET. ASAP. 
-        The Back Street Butcher has hit again. Jack's already on  his way.'""")
+    print(  """You peel your face off the rancid floor. 
+The first pain that hits you today is coming from your knuckle; who knows what that's from. 
+The second pain comes in  auditory form as your phone jolts you awake. 
+'Detective. Durden, it's Commissioner Sidorov, get your ass off your floor again- you're needed at 33 Park Avenue, SOUTH of MAIN STREET. ASAP. 
+The Back Street Butcher has hit again. Jack's already on  his way.'""")
     print("Press enter to continue")
     # Main game loop
     start = input()
