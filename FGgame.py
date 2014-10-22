@@ -300,6 +300,7 @@ You immediately walk off... This can only mean one thing...""")
   
 
     inventory.append(item_proof)
+    inventory.remove(item_car)
     print ("\n"+str(item_proof["description"]))
 
 
