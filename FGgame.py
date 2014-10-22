@@ -249,26 +249,35 @@ def interrogation_place():
             print("\n"+"That is not a valid input."+"\n")
 
     if choice == "1":
-        print("I was at the bar with Sarah. Why?")
-        print("Conveniently, Claire is the suspect's girlfriend and clears him for last night.")
+        print("""I was at the bar with Sarah. Why?
+'She's been found dead. We were wondering if you had anything to do with it.
+Jack knocks the door and enters the room.
+Jack: 'Durden, it's okay, we're wasting this man's time...""")
+        print("Conveniently, Claire is the suspect's girlfriend and clears him for last night- he was home before the time of the murder.")
         item_alibi["karma"] = 5   
     elif choice == "2":
-        print("Fuck off, Sarah's dead? I honestly didn't know. I wasn't there.")
-        print("Conveniently, Claire is the suspect's girlfriend and clears him for last night.")
+        print("""Fuck off, Sarah's dead? I honestly didn't know. I wasn't there.
+'That's awfully convenient for you, isn't it, Stuart... We know you were there. We have proof.'
+Jack bursts into the room.
+Jack: 'He may be lying on that part, but he's an innocent man, Durden. You're free to go, Stuart, but try and be a bit more honest next time, will you.'""")
+        print("Conveniently, Claire is the suspect's girlfriend and clears him for last night- he was home before the time of the murder.")
         item_alibi["karma"] = -5   
     elif choice == "3":
-        print("You get dragged out of the room and your partner yells at you.")
-        print("Conveniently, Claire is the suspect's girlfriend and clears him for last night.")
+        print("""You get dragged out of the room and your partner yells at you.
+Jack: 'Get the fuck out of here, Durden. What the hell was that?! Just leave, Durden.'""")
+        print("Conveniently, Claire is the suspect's girlfriend and clears him for last night- he was home before the time of the murder.")
         item_alibi["karma"] = -10     
     elif choice == "4":
-        print("Conveniently, Claire is the suspect's girlfriend and clears him for last night.")         
+        print("Conveniently, Claire is the suspect's girlfriend and clears him for last night- he was home before the time of the murder.")         
 
     inventory.remove(item_warrant)
     inventory.append(item_alibi)
     calculate_karma(inventory)
     print("\n"+"The suspect has an alibi. Maybe there's more to explore back at the bar.")
     print(item_alibi["description"])
-    print()
+    global current_room
+    print("\n"+"You are now back in the Police Station as you have no further use for the suspect."+"\n")
+    current_room = rooms["Police Station"]
 
 def breaking_in():
     isvalid = False
@@ -454,7 +463,7 @@ Jack's asleep on his sofa; before he has time to react, your gun's barrel is mak
 as the chink of the handcuffs around his wrists signifies the hopeful end of this case and the of Jack's reign of terror.""")
     print("Congratulations. You have reached the end of the game.""")
     karma = calculate_karma(inventory)
-    print("Your karma was:" + str(karma))
+    print("Your karma was: " + str(karma))
     print("Press enter to close.")
     end = input()
     if end != "drtuyiop[oiuytdrtfgyhiop[oihkfcxg":
@@ -563,7 +572,7 @@ def main():
     print()
     print(  """You peel your face off the rancid floor. 
 The first pain that hits you today is coming from your knuckle; who knows what that's from. 
-The second pain comes in  auditory form as your phone jolts you awake. 
+The second pain comes in auditory form as your phone jolts you awake. 
 'Detective. Durden, it's Commissioner Sidorov, get your ass off your floor again- you're needed at 33 Park Avenue, SOUTH of MAIN STREET. ASAP. 
 The Back Street Butcher has hit again. Jack's already on  his way.'""")
     print("Press enter to continue")

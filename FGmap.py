@@ -41,7 +41,10 @@ crime_scene = {
     """You are confronted with a brutal sight: the body absorbs all of the
 happiness that may have existed here. The smell is already pungent- however,
 the most perplexing aspect is the body's attire... They appear to be wearing a
-men's jumper.""",
+men's jumper.
+Jack: 'Hey, partner, I know you quite well now- don't go stealing unnecessary shit from the crime scene again.'
+You inspect the crime scene and find that there is little use for the handbag or the watch... Although...
+They are worth a pretty penny. The beer bottle you found here appeared to be the speciality beer from the local bar.""",
 
     "exits": {"north": "Main Street"},
 
@@ -57,7 +60,8 @@ police_station = {
 
     "description":
     """The smell of donuts is more rife than actual policework in this place. Oh well, at least they're 
-pretty good donuts.""",
+pretty good donuts. You have Dexter's laboratory on the north side of the building. To the east, is Claire's Office,
+she can help you with warrants and bringing people in for questioning.""",
 
     "exits": {"west": "Main Street", "south": "Interrogation Room", "north": "Lab", "east": "Claire's Office"},
 
@@ -75,7 +79,9 @@ room_bar = {
     "description":
     """You are standing at the bar, trying to not to throw up 
 as it happens to smell approximately like a toilet
-- specifically, your toilet after last night. The barman looks at you inquisitively.""",
+- specifically, your toilet after last night. The barman looks at you inquisitively.
+He had heard about the murder on the news and had readied pictures from the CCTV for you.
+What a nice guy.""",
 
     "exits": {"east": "Main Street", "west": "CCTV Room"},
 
@@ -90,7 +96,8 @@ CCTV_room = {
     "name": "CCTV Room",
 
     "description":
-    """This room hasn't been properly staffed in a while- it's a mess.
+    """You decided to check out the CCTV room for yourself. Maybe you can see which car Sarah got into last night.
+This room hasn't been properly staffed in a while- it's a mess.
 Luckily, their equipment has still been running and they haven't ran out of tape yet.
 Maybe you can find something on the tape of last night.""",
 
@@ -136,7 +143,7 @@ interrogation_room = {
     "name": "Interrogation Room",
 
     "description":
-    """You are sat opposite a rather dashing looking feller, 
+    """You are sat opposite a rather dashing looking fella, 
 who calmly welcomes your presence with a smile. 
 His arrogant facade might be hiding something.""",
 

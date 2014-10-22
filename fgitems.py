@@ -36,7 +36,7 @@ item_jumper = {
 
     "name": "a jumper",
 
-    "description": """Male jumper found on the victims body. Maybe Dexter at the lab could find some useful information from this""",
+    "description": """Male jumper found on the victims body. Maybe Dexter at the lab could find some useful information from this.""",
     "mass": 0.75,
     "karma": 3
 }
@@ -82,8 +82,9 @@ some confirmation that Allen was at the bar last night might be enough for a war
 item_car = {
     "id": "information",
     "name": "information",
-    "description": """This is information about a car. The description matches my car, my partner's car and Matt Morgan's car.
-Maybe we should check out Matt's house. He lives in the housing estate.""",
+    "description": """This is information about the car Sarah got into. 
+The description of the car in question matches my car, my partner's car and a one Matt Morgan's car... Weird.
+Maybe we should check out this Matt's house. He lives in the HOUSING ESTATE, apparently, according to police records.""",
     "mass": 0.5,
     "karma": 0
 
@@ -123,7 +124,7 @@ item_voicemail = {
 item_barman = {
     "id": "picture",
     "name": "picture",
-    "description": """CCTV footage from the bar showing the suspect getting wasted at the bar.""",
+    "description": """CCTV footage picture from the bar showing the suspect getting wasted at the bar.""",
     "mass": 0,
     "karma": 0
 }
