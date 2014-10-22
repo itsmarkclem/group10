@@ -416,11 +416,27 @@ def calculate_outcome(karma):
         print("""I don't know what possessed him, but I never did trust him. I knew he was involved in some shady shit, I should stop
             him before he escapes.""")
         if gunavailable == True and handcuffsav== False:
-            print("you shooot him")
+            print("""'I've never been to his house before now; he's never invited me. No surprise after what my life has become.
+                Or maybe he's the one hiding things? Well, his facade has finally broken. His arrogance has got to him as he's currently
+                just sat on the john. Door wide open. Shit, I forgot my handcuffs- this isn't going to go well. I can't run now, he could
+                get away. Maybe I could claim it was self defence...'
+                With no remose, you unload 5 slugs into Jack's chest and watch as his empty expression slowly becomes statue. You've stopped him.""")
         elif gunavailable == False and handcuffsav== False:
-            print("he shoots you")
+            print("""'Jack always was a funny one. Very cold. A little too interested in the cases. Always understanding the killers a little too much
+                Creeped me right out; but I guess he always friendly enough. Maybe I can talk him out of it... He should notice that I'm unarmed, right.'
+                Jack wasn't in the usual friendly mood. He didn't give me a chance to ask why. He jumps on me and places his hands around my neck. 
+                His facial muscles don't move an inch. By contrast, my face is a screwed up mess trying to breathe in every last molecule of oxygen
+                that it can find. His face becomes a blur the shock subsides and I accept my fate. I was so close, yet now I am so far.
+                I am Jack's latest victim.""")
         elif gunavailable == True and handcuffsav == True:
-            print("you arrest him")
+            print("""'I can't believe that Jack could do this when he works for the force. I would never ever think of going against my loyalties.
+                I can't fathom what would bring him to do such a thing. I wonder if he can justify himself. If that's even possible.
+                Sarah's body was utterly brutalised. There's no rational explanation for what he did to her and her body. I've come as prepared
+                as I can get- I have my gun and my handcuffs. Hopefully he will see that he cannot win, he cannot go on. 
+                I'm going to take him down myself.'
+                Jack's asleep on his sofa; before he has time to react, your gun's barrel is making itself at home on his temple. He looks expasperated
+                as the chink of the handcuffs signifies the hopeful end of this case and the of Jack's reign of terror.""")
+    print("Congratulations. You have reached the end of the game.""")
     print("Congratulations. You have reached the end of the game.")
     print("Press enter to close.")
     end = input()
@@ -528,7 +544,11 @@ def move(exits, direction):
 def main():
     
     print()
-    print("""You peel your face off the rancid floor. The first pain that hits you today is  coming from your knuckle; who knows what that's from. The second pain comes in  auditory form as your phone jolts you awake. 'Detective. Durden, get your ass off your floor again- you're needed at 33 Park Avenue, SOUTH of MAIN STREET. ASAP. Jack's already on  his way.'  """)
+    print("""'You peel your face off the rancid floor. 
+        The first pain that hits you today is coming from your knuckle; who knows what that's from. 
+        The second pain comes in  auditory form as your phone jolts you awake. 
+        'Detective. Durden, it's Commissioner Sidorov, get your ass off your floor again- you're needed at 33 Park Avenue, SOUTH of MAIN STREET. ASAP. 
+        The Back Street Butcher has hit again. Jack's already on  his way.'""")
     print("Press enter to continue")
     # Main game loop
     start = input()
