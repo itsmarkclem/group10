@@ -242,7 +242,7 @@ def interrogation_place():
         print("3. There is no need for words. Punch him in the face.")
         print("4. Don't ask him anything.")
 
-        choice= str(input("What do you choose? Type the number"+"\n"))
+        choice= str(input("What do you choose? Type the number,"+"\n"+"> "))
         if choice =="1" or choice =="2" or choice =="3" or choice =="4":
             isvalid = True
         else:
@@ -273,7 +273,7 @@ Jack: 'Get the fuck out of here, Durden. What the hell was that?! Just leave, Du
     inventory.remove(item_warrant)
     inventory.append(item_alibi)
     calculate_karma(inventory)
-    print("\n"+"The suspect has an alibi. Maybe there's more to explore back at the bar.")
+    print("\n"+"The suspect has an alibi. Maybe there's more to explore back at the BAR.")
     print(item_alibi["description"])
     global current_room
     print("\n"+"You are now back in the Police Station as you have no further use for the suspect."+"\n")
@@ -285,7 +285,7 @@ def breaking_in():
         print("1. Break in?")
         print("2. Ask neighbour about their whereabouts")
 
-        choice= str(input("What do you choose? Type the number"+"\n"))
+        choice= str(input("What do you choose? Type the number."+"\n"+"> "))
         if choice =="1" or choice =="2":
             isvalid = True
         else:
@@ -435,7 +435,7 @@ You find Jack making a cup of coffee in his kitchen. He is shocked by your prese
 Before even thinking about an answer, you tackle him to the floor. Jack quickly puts the pieces together in his head and reaches
 for his pistol on his kitchen stool. You climb back to your feet and stare down at Jack...
 'Do it.'
-He shot echoes into the street. The killer has been stopped. You have been stopped. Your story has concluded.""")
+His shot echoes into the street. The killer has been stopped. You have been stopped. Your story has concluded.""")
 
     elif karma >0:
         print("""I don't know what possessed him, but I never did trust him. I knew he was involved in some shady shit, I should stop

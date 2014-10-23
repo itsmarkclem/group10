@@ -71,7 +71,7 @@ item_beer = {
 item_blood = {
     "id": "sample",
     "name": "hair sample incriminating Stuart Allen",
-    "description": """DNA results, belonging to Stuart Allen, from the jumper found at the crime scene. This in combination with
+    "description": """You are given DNA results, belonging to Stuart Allen, from the jumper found at the crime scene. This in combination with
 some confirmation that Allen was at the bar last night might be enough for a warrant.""",
     "mass": 0.1,
     "karma": 0
