@@ -124,7 +124,7 @@ item_voicemail = {
 item_barman = {
     "id": "picture",
     "name": "picture",
-    "description": """CCTV footage picture from the bar showing the suspect getting wasted at the bar.""",
+    "description": """CCTV footage picture from the bar showing the suspect getting wasted at the bar with the victim.""",
     "mass": 0,
     "karma": 0
 }

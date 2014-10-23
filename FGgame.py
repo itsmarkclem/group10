@@ -362,7 +362,7 @@ def execute_go(direction):
         current_room=move(current_room["exits"],direction)
     
     else:
-        print("There is no reason to go there.")
+        print("\n"+"There is no reason to go there.")
 
 
 def execute_take(item_id):
@@ -378,7 +378,7 @@ def execute_take(item_id):
         if item["id"]== item_id:
             found= True
             itemtoadd=item
-            if (current_mass+itemtoadd["mass"])>5:
+            if (current_mass+itemtoadd["mass"])>10:
                 found = False
                 print("You are carrying too many things.")
                 break
@@ -600,6 +600,7 @@ The Back Street Butcher has hit again. Jack's already on  his way.'""")
                     if item == item_blood:
                         if item == item_warrant:
                             inventory.remove(item_blood)
+                            rooms["Claire's Office"]["requireditems"] = []
 
             
 
