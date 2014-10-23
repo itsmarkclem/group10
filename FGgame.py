@@ -197,7 +197,7 @@ def print_menu(exits, room_items, inv_items):
     What do you want to do?
 
     """
-    print("You can:")
+    print("You can:" + "\n")
     # Iterate over available exits
     for direction in exits:
         # Print the exit name and where it leads to
@@ -213,7 +213,7 @@ def print_menu(exits, room_items, inv_items):
     # COMPLETE ME!
     #
     
-    print("What do you want to do?")
+    print("\n" + "What do you want to do?")
 
 
 def is_valid_exit(exits, chosen_exit):
