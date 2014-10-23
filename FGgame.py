@@ -390,7 +390,7 @@ def execute_take(item_id):
         current_room["items"].remove(itemtoadd)
         karma = calculate_karma(inventory)
         
-        Continue = input("Press enter to continue"+"\n")
+        Continue = input("PRESS ENTER TO CONTINUE"+"\n")
         if Continue != "drtuyiop[oiuytdrtfgyhiop[oihkfcxg":
             print_room(current_room)
             print_inventory_items(inventory)
