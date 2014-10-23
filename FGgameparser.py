@@ -55,7 +55,6 @@ def remove_punct(text):
 
     return no_punct
 
-
 def normalise_input(user_input):
     """This function removes all punctuation from the string and converts it to
     lower case. It then splits the string into a list of words (also removing

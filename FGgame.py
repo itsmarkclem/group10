@@ -505,26 +505,27 @@ def execute_command(command):
     execute_take, or execute_drop, supplying the second word as the argument.
 
     """
-    if command[0] == "go":
-        if len(command) > 1:
-            execute_go(command[1])
-        else:
-            print("Go where?")
+    if len(command) >0:
+        if command[0] == "go":
+            if len(command) > 1:
+                execute_go(command[1])
+            else:
+                print("Go where?")
 
-    elif command[0] == "take":
-        if len(command) > 1:
-            execute_take(command[1])
-        else:
-            print("Take what?")
+        elif command[0] == "take":
+            if len(command) > 1:
+                execute_take(command[1])
+            else:
+                print("Take what?")
 
-    elif command[0] == "drop":
-        if len(command) > 1:
-            execute_drop(command[1])
-        else:
-            print("Drop what?")
+        elif command[0] == "drop":
+            if len(command) > 1:
+                execute_drop(command[1])
+            else:
+                print("Drop what?")
 
-    else:
-        print("This makes no sense.")
+        else:
+            print("This makes no sense.")
 
 
 def menu(exits, room_items, inv_items):
@@ -541,12 +542,10 @@ def menu(exits, room_items, inv_items):
 
     # Read player's input
     user_input = input("> ")
-    if user_input == "":
-        user_input= "nothing"
     # Normalise the input
     normalised_user_input = normalise_input(user_input)
-
     return normalised_user_input
+
 
 
 def move(exits, direction):
@@ -588,6 +587,7 @@ The Back Street Butcher has hit again. Jack's already on  his way.'""")
             elif current_room == rooms["Suspect's House"]:
                 breaking_in()
             elif current_room == rooms["Partner's House"]:
+                karma= calculate_karma(inventory)
                 calculate_outcome(karma)
             elif current_room == rooms["Lab"]:
                 inventory.append(item_blood)
